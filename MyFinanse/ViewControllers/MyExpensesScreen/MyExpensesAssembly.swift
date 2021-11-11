@@ -14,9 +14,14 @@ final class MyExpensesAssembly {
         guard let view = UIStoryboard(name: "MyExpensesScreen", bundle: nil).instantiateViewController(withIdentifier: "MyExpensesVC") as? MyExpensesVC else { return UIViewController() }
         
         let router = MyExpensesRouter(controller: view)
-        let presenter = MyExpensesPresenter(view: view, router: router)
+        let dataConverter = MyExpensesDataConverter()
+        let presenter = MyExpensesPresenter(view: view, router: router, dataConverter: dataConverter)
+        let tableViewManager = MyExpensesTableViewManager()
         
+        tableViewManager.delegate = presenter
+        view.tableViewManager = tableViewManager
         view.presenter = presenter
+        
         return view
     }
 }

@@ -24,11 +24,13 @@
 		849F0DCF2738524D00F2AC60 /* BaseViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849F0DCD2738524D00F2AC60 /* BaseViewOutput.swift */; };
 		849F0DD22738570100F2AC60 /* ExpensesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849F0DD12738570100F2AC60 /* ExpensesModel.swift */; };
 		84B0760127394A2100F7633A /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0760027394A2100F7633A /* ExpenseCell.swift */; };
+		84C70232273D58D4007DFDF1 /* MyExpensesDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C70231273D58D4007DFDF1 /* MyExpensesDataConverter.swift */; };
 		84F94DA0273D484100312426 /* MyExpensesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F94D9F273D484100312426 /* MyExpensesViewModel.swift */; };
 		84F94DA6273D48F600312426 /* TableCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F94DA2273D48F600312426 /* TableCellConfigurator.swift */; };
 		84F94DA7273D48F600312426 /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F94DA3273D48F600312426 /* CellConfigurator.swift */; };
 		84F94DA8273D48F600312426 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F94DA4273D48F600312426 /* Configurable.swift */; };
 		84F94DA9273D48F600312426 /* CollectionCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F94DA5273D48F600312426 /* CollectionCellConfigurator.swift */; };
+		84F94DAC273D4B6B00312426 /* MyExpensesTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F94DAB273D4B6B00312426 /* MyExpensesTableViewManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,11 +53,13 @@
 		849F0DCD2738524D00F2AC60 /* BaseViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewOutput.swift; sourceTree = "<group>"; };
 		849F0DD12738570100F2AC60 /* ExpensesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesModel.swift; sourceTree = "<group>"; };
 		84B0760027394A2100F7633A /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
+		84C70231273D58D4007DFDF1 /* MyExpensesDataConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExpensesDataConverter.swift; sourceTree = "<group>"; };
 		84F94D9F273D484100312426 /* MyExpensesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExpensesViewModel.swift; sourceTree = "<group>"; };
 		84F94DA2273D48F600312426 /* TableCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellConfigurator.swift; sourceTree = "<group>"; };
 		84F94DA3273D48F600312426 /* CellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
 		84F94DA4273D48F600312426 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		84F94DA5273D48F600312426 /* CollectionCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCellConfigurator.swift; sourceTree = "<group>"; };
+		84F94DAB273D4B6B00312426 /* MyExpensesTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExpensesTableViewManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,14 +127,14 @@
 		849F0DC12738510100F2AC60 /* MyExpensesScreen */ = {
 			isa = PBXGroup;
 			children = (
+				84F94D9F273D484100312426 /* MyExpensesViewModel.swift */,
 				84B0760227394A2500F7633A /* Cells */,
 				848C186827395112005B114D /* MyExpensesNC.swift */,
 				849F0DC32738512E00F2AC60 /* MyExpensesAssembly.swift */,
 				849F0DC5273851C500F2AC60 /* MyExpensesRouter.swift */,
-				849F0DC7273851CD00F2AC60 /* MyExpensesPresenter.swift */,
-				849F0DAE27384DC100F2AC60 /* MyExpensesVC.swift */,
+				84F94DAA273D4B5B00312426 /* Presenter */,
+				84F94DAD273D588C00312426 /* View */,
 				849F0DC9273851D600F2AC60 /* MyExpensesScreen.storyboard */,
-				84F94D9F273D484100312426 /* MyExpensesViewModel.swift */,
 			);
 			path = MyExpensesScreen;
 			sourceTree = "<group>";
@@ -169,6 +173,24 @@
 				84F94DA5273D48F600312426 /* CollectionCellConfigurator.swift */,
 			);
 			path = CellConfigurator;
+			sourceTree = "<group>";
+		};
+		84F94DAA273D4B5B00312426 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				849F0DC7273851CD00F2AC60 /* MyExpensesPresenter.swift */,
+				84C70231273D58D4007DFDF1 /* MyExpensesDataConverter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		84F94DAD273D588C00312426 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84F94DAB273D4B6B00312426 /* MyExpensesTableViewManager.swift */,
+				849F0DAE27384DC100F2AC60 /* MyExpensesVC.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +268,7 @@
 				84F94DA0273D484100312426 /* MyExpensesViewModel.swift in Sources */,
 				849F0DAF27384DC100F2AC60 /* MyExpensesVC.swift in Sources */,
 				84F94DA8273D48F600312426 /* Configurable.swift in Sources */,
+				84F94DAC273D4B6B00312426 /* MyExpensesTableViewManager.swift in Sources */,
 				849F0DC42738512E00F2AC60 /* MyExpensesAssembly.swift in Sources */,
 				849F0DD22738570100F2AC60 /* ExpensesModel.swift in Sources */,
 				84F94DA7273D48F600312426 /* CellConfigurator.swift in Sources */,
@@ -253,6 +276,7 @@
 				849F0DAB27384DC100F2AC60 /* AppDelegate.swift in Sources */,
 				849F0DBF27384FA800F2AC60 /* MainTabBarController.swift in Sources */,
 				847B627E273AA3F1005AE905 /* ExpensesManager.swift in Sources */,
+				84C70232273D58D4007DFDF1 /* MyExpensesDataConverter.swift in Sources */,
 				849F0DCE2738524D00F2AC60 /* BaseRouterInput.swift in Sources */,
 				849F0DCF2738524D00F2AC60 /* BaseViewOutput.swift in Sources */,
 				84F94DA9273D48F600312426 /* CollectionCellConfigurator.swift in Sources */,

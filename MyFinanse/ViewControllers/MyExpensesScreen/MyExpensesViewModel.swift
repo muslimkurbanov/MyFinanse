@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MyExpensesModel {
+struct MyExpensesViewModel {
     
     let rows: [Row]
     
@@ -15,8 +15,9 @@ struct MyExpensesModel {
         
         let configurator: TableCellConfiguratorProtocol
         
-        var resueId: String {
+        var reuseId: String {
             return type(of: configurator).reuseId
         }
     }
 }
+
