@@ -1,8 +1,8 @@
 //
 //  BaseViewOutput.swift
-//  kitchenonwheels
+//  MyFinanse
 //
-//  Created by Ramazan Ashurbekov on 08.06.2021.
+//  Created by Муслим Курбанов on 07.11.2021.
 //
 
 import Foundation

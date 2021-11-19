@@ -39,21 +39,31 @@ final class MyExpensesVC: UIViewController {
     private func setupView() {
         
         title = "Расходы"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addExpenseDidTap))
         
-//        tableView.isHidden = true
+        tableView.isHidden = true
+        
+        let addExpenseItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addExpenseDidTap))
+        
+        let setupExpensesItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(setupExpensesDidTap))
+        
+        navigationItem.rightBarButtonItem = addExpenseItem
+        navigationItem.leftBarButtonItem = setupExpensesItem
     }
     
     @objc private func addExpenseDidTap() {
         
-        let alertController = UIAlertController(title: "Добавть расход", message: nil, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Добавть расход",
+                                                message: nil,
+                                                preferredStyle: .alert)
         
         alertController.addTextField { textField in
+            
             textField.placeholder = "Название расхода"
             textField.autocapitalizationType = .words
         }
         
         alertController.addTextField { textField in
+            
             textField.keyboardType = .numberPad
             
             //TODO: - В настройках добавить курс
@@ -76,6 +86,11 @@ final class MyExpensesVC: UIViewController {
         
         present(alertController, animated: true, completion: nil)
     }
+    
+    @objc private func setupExpensesDidTap() {
+        
+        presenter?.setupExpensesDidTap()
+    }
 }
 
 //MARK: - MyExpensesViewInput
@@ -89,8 +104,12 @@ extension MyExpensesVC: MyExpensesViewInput {
     
     func calculateExpense(id: Int) {
         
-        let alertController = UIAlertController(title: "Расход", message: nil, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Расход",
+                                                message: nil,
+                                                preferredStyle: .alert)
+        
         alertController.addTextField { textField in
+            
             textField.keyboardType = .numberPad
             textField.placeholder = "Сумма расхода"
         }
@@ -98,7 +117,7 @@ extension MyExpensesVC: MyExpensesViewInput {
         let action = UIAlertAction(title: "Вычесть расход", style: .default) { [weak self] action in
             
             guard let calculateExpense = alertController.textFields?[0].text,
-                    calculateExpense != "" else { return }
+                  calculateExpense != "" else { return }
             
             //TODO: - Подумать что можно сделать если расход превышает выделенную сумму
 //            if Int(calculateExpense) ?? 0 > self?.expensesModel[indexPath.row].expenseSum ?? 0 {

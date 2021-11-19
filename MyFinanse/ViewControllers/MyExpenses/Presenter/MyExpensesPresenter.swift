@@ -9,18 +9,24 @@ import Foundation
 
 protocol MyExpensesViewOutput: BaseViewOutput {
     
+    func calendarDidTap()
+    func setupExpensesDidTap()
+    
     func addExpense(name: String, sum: Int)
     func calculateExpense(id: Int, sum: Int)
 }
 
 final class MyExpensesPresenter {
     
+    //MARK: - Properties
+    
     private unowned let view: MyExpensesViewInput
     private let router: MyExpensesRouterInput
     
-    private var model: [ExpensesModel] = []
     private let expenseManager: ExpensesManager = ExpensesManagerImp()
     private let dataConverter: MyExpensesDataConverterInput
+    
+    //MARK: - Init
     
     init(
         view: MyExpensesViewInput,
@@ -32,6 +38,8 @@ final class MyExpensesPresenter {
         self.dataConverter = dataConverter
     }
 }
+
+//MARK: - ViewOutput
 
 extension MyExpensesPresenter: MyExpensesViewOutput {
     
@@ -66,13 +74,25 @@ extension MyExpensesPresenter: MyExpensesViewOutput {
             self?.view.showExpenses(with: viewModel)
         }
     }
+    
+    func setupExpensesDidTap() {
+        
+        router.showSetupExpensesScreen()
+    }
+    
+    func calendarDidTap() {
+        
+        router.showExpensesDateScreen()
+    }
 }
+
+//MARK: - TableViewManagerDelegate
 
 extension MyExpensesPresenter: MyExpensesTableViewManagerDelegate {
     
     func didSelect(id: Int) {
         
-        self.view.calculateExpense(id: id)
+        view.calculateExpense(id: id)
     }
     
     func didLeadingSwipe(id: Int) {

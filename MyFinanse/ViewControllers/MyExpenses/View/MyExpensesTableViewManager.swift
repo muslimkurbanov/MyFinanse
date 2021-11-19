@@ -27,6 +27,7 @@ final class MyExpensesTableViewManager: NSObject {
 }
 
 // MARK: - CancelOrderTableViewManagerInput
+
 extension MyExpensesTableViewManager: MyExpensesTableViewManagerInput {
     
     func setup(tableView: UITableView) {
@@ -40,11 +41,13 @@ extension MyExpensesTableViewManager: MyExpensesTableViewManagerInput {
     func update(with viewModel: MyExpensesViewModel) {
         self.viewModel = viewModel
         tableView?.reloadData()
+        
+        tableView?.isHidden = viewModel.rows.isEmpty
     }
 }
 
-
 // MARK: - UITableViewDataSource
+
 extension MyExpensesTableViewManager: UITableViewDataSource {
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,8 +67,8 @@ extension MyExpensesTableViewManager: UITableViewDataSource {
     }
 }
 
-
 // MARK: - UITableViewDelegate
+
 extension MyExpensesTableViewManager: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
