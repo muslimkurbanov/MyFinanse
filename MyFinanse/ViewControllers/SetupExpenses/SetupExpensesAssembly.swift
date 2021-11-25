@@ -11,11 +11,7 @@ final class SetupExpensesAssembly {
     
     static func assembleModule() -> UIViewController {
         
-        guard let view = UIStoryboard(name: "SetupExpensesScreen", bundle: nil).instantiateViewController(withIdentifier: "SetupExpensesVC") as? SetupExpensesVC else { return UIViewController() }
-        
-        let presenter = SetupExpensesPresenter(view: view)
-        
-        view.presenter = presenter
+        guard let view = UIStoryboard(name: "SetupExpensesScreen", bundle: nil).instantiateViewController(withIdentifier: "SetupExpensesVC") as? SetupExpensesVC else { return UITableViewController() }
         
         return view
     }

@@ -28,7 +28,7 @@ extension MyExpensesRouter: MyExpensesRouterInput {
         
         let setupExpensesVC = SetupExpensesAssembly.assembleModule()
         
-        controller?.navigationController?.present(setupExpensesVC, animated: true, completion: nil)
+        controller?.navigationController?.present(UINavigationController(rootViewController: setupExpensesVC), animated: true)
     }
     
     func showExpensesDateScreen() {

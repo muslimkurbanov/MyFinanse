@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		842FFE9C273EA29B0090DDF3 /* SetupExpensesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842FFE9B273EA29B0090DDF3 /* SetupExpensesPresenter.swift */; };
+		84209BDE2747DBA700A92320 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84209BDD2747DBA700A92320 /* UIView + Extension.swift */; };
 		842FFE9E273EA35B0090DDF3 /* SetupExpensesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842FFE9D273EA35B0090DDF3 /* SetupExpensesAssembly.swift */; };
 		847B627E273AA3F1005AE905 /* ExpensesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B627D273AA3F1005AE905 /* ExpensesManager.swift */; };
 		848C186927395112005B114D /* MyExpensesNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C186827395112005B114D /* MyExpensesNC.swift */; };
@@ -41,7 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		842FFE9B273EA29B0090DDF3 /* SetupExpensesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupExpensesPresenter.swift; sourceTree = "<group>"; };
+		84209BDD2747DBA700A92320 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		842FFE9D273EA35B0090DDF3 /* SetupExpensesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupExpensesAssembly.swift; sourceTree = "<group>"; };
 		847B627D273AA3F1005AE905 /* ExpensesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesManager.swift; sourceTree = "<group>"; };
 		848C186827395112005B114D /* MyExpensesNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExpensesNC.swift; sourceTree = "<group>"; };
@@ -87,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84209BDF2747DBD500A92320 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				84209BDD2747DBA700A92320 /* UIView + Extension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		847B627F273AA3F6005AE905 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +129,7 @@
 				849F0DC0273850FA00F2AC60 /* ViewControllers */,
 				849F0DCB2738522000F2AC60 /* BaseProtocols */,
 				84F94DA1273D48F600312426 /* CellConfigurator */,
+				84209BDF2747DBD500A92320 /* Helpers */,
 				847B627F273AA3F6005AE905 /* Services */,
 				849F0DB327384DC100F2AC60 /* Assets.xcassets */,
 				849F0DB527384DC100F2AC60 /* LaunchScreen.storyboard */,
@@ -182,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				842FFE9D273EA35B0090DDF3 /* SetupExpensesAssembly.swift */,
-				842FFE9B273EA29B0090DDF3 /* SetupExpensesPresenter.swift */,
 				84C1325D273E793900039399 /* SetupExpensesVC.swift */,
 				84C13260273E795B00039399 /* SetupExpensesScreen.storyboard */,
 			);
@@ -314,7 +322,6 @@
 			files = (
 				84F94DA0273D484100312426 /* MyExpensesViewModel.swift in Sources */,
 				849F0DAF27384DC100F2AC60 /* MyExpensesVC.swift in Sources */,
-				842FFE9C273EA29B0090DDF3 /* SetupExpensesPresenter.swift in Sources */,
 				84F94DA8273D48F600312426 /* Configurable.swift in Sources */,
 				84C13257273E747A00039399 /* ExpensesDateVC.swift in Sources */,
 				84F94DAC273D4B6B00312426 /* MyExpensesTableViewManager.swift in Sources */,
@@ -331,6 +338,7 @@
 				849F0DCE2738524D00F2AC60 /* BaseRouterInput.swift in Sources */,
 				849F0DCF2738524D00F2AC60 /* BaseViewOutput.swift in Sources */,
 				84F94DA9273D48F600312426 /* CollectionCellConfigurator.swift in Sources */,
+				84209BDE2747DBA700A92320 /* UIView + Extension.swift in Sources */,
 				849F0DC8273851CD00F2AC60 /* MyExpensesPresenter.swift in Sources */,
 				849F0DAD27384DC100F2AC60 /* SceneDelegate.swift in Sources */,
 				842FFE9E273EA35B0090DDF3 /* SetupExpensesAssembly.swift in Sources */,
