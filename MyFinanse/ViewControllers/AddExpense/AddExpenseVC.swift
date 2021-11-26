@@ -1,13 +1,18 @@
 //
-//  SetupExpensesVC.swift
+//  AddExpenseVC.swift
 //  MyFinanse
 //
-//  Created by Муслим Курбанов on 12.11.2021.
+//  Created by Муслим Курбанов on 26.11.2021.
 //
 
 import UIKit
 
-final class SetupExpensesVC: UITableViewController {
+final class AddExpenseVC: UIViewController {
+    
+    //MARK: - IBOutlets
+    
+    @IBOutlet private weak var expenseNameTextField: UITextField!
+    @IBOutlet private weak var expenseSumTextField: UITextField!
     
     //MARK: - Lifecycle
     
@@ -17,12 +22,19 @@ final class SetupExpensesVC: UITableViewController {
         setupView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        view.endEditing(true)
+    }
     //MARK: - Private funcs
     
     private func setupView() {
         
         //view
-        title = "Настроить расходы"
+        title = "Добавить расход"
         
         //navigationContoller
         if #available(iOS 15.0, *) {
@@ -41,26 +53,24 @@ final class SetupExpensesVC: UITableViewController {
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         
-        //tableView
-        clearsSelectionOnViewWillAppear = true
+        //textFields
+        expenseNameTextField.delegate = self
+        expenseSumTextField.delegate = self
+        
+        expenseNameTextField.becomeFirstResponder()
     }
+}
+
+extension AddExpenseVC: UITextFieldDelegate {
     
-    //MARK: - TableViewDelegate
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        switch indexPath.row {
-//            case 0:
-            
-//            self.navigationController?.show(SetupExpensesAssembly.assembleModule(), sender: nil)
-            
-            default: break
+        if textField == expenseNameTextField {
+            expenseSumTextField.becomeFirstResponder()
+        } else {
+            view.endEditing(true)
         }
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        UITableView.automaticDimension
+        
+        return true
     }
 }

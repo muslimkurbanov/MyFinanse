@@ -13,8 +13,17 @@ final class MyExpensesNC: UINavigationController {
         
         let myExpensesScreen = MyExpensesAssembly.assembleModule()
         
+        if #available(iOS 15.0, *) {
+            
+            navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            navigationBar.standardAppearance.shadowColor = nil
+            navigationBar.standardAppearance.backgroundColor = UIColor(named: "mainAppColor")
+            navigationBar.scrollEdgeAppearance = navigationBar.standardAppearance
+            navigationBar.tintColor = .white
+        }
+        
         navigationBar.isTranslucent = false
-        navigationBar.barTintColor = #colorLiteral(red: 0.476841867, green: 0.5048075914, blue: 1, alpha: 1)
+        navigationBar.barTintColor = UIColor(named: "mainAppColor")
         navigationBar.tintColor = .white
         
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]

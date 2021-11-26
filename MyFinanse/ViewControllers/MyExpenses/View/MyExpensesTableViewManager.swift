@@ -42,7 +42,6 @@ extension MyExpensesTableViewManager: MyExpensesTableViewManagerInput {
         self.viewModel = viewModel
         tableView?.reloadData()
         
-        tableView?.isHidden = viewModel.rows.isEmpty
     }
 }
 

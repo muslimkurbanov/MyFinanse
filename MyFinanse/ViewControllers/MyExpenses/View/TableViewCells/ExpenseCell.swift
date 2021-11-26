@@ -42,7 +42,7 @@ extension ExpenseCell: Configurable {
             expenseCheckLabel.textColor = .red
         } else {
             
-            expenseCheckLabel.textColor = .label
+            expenseCheckLabel.textColor = .systemGreen
         }
     }
 }

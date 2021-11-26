@@ -9,6 +9,7 @@ import UIKit
 
 protocol MyExpensesRouterInput: BaseRouterInput {
     
+    func showAddExpenseScreen()
     func showExpensesDateScreen()
     func showSetupExpensesScreen()
 }
@@ -23,6 +24,13 @@ final class MyExpensesRouter {
 //MARK: - MyExpensesRouterInput
 
 extension MyExpensesRouter: MyExpensesRouterInput {
+    
+    func showAddExpenseScreen() {
+        
+        let addExpenseVC = AddExpenseAssembly.assembleModule()
+        
+        controller?.navigationController?.present(UINavigationController(rootViewController: addExpenseVC), animated: true)
+    }
     
     func showSetupExpensesScreen() {
         

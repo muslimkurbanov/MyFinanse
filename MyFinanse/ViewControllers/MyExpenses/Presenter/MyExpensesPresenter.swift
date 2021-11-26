@@ -12,6 +12,7 @@ protocol MyExpensesViewOutput: BaseViewOutput {
     func calendarDidTap()
     func setupExpensesDidTap()
     
+    func addExpenseDidTap()
     func addExpense(name: String, sum: Int)
     func calculateExpense(id: Int, sum: Int)
 }
@@ -73,6 +74,11 @@ extension MyExpensesPresenter: MyExpensesViewOutput {
             
             self?.view.showExpenses(with: viewModel)
         }
+    }
+    
+    func addExpenseDidTap() {
+        
+        router.showAddExpenseScreen()
     }
     
     func setupExpensesDidTap() {

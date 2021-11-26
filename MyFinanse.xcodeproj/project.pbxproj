@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		84209BDE2747DBA700A92320 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84209BDD2747DBA700A92320 /* UIView + Extension.swift */; };
 		842FFE9E273EA35B0090DDF3 /* SetupExpensesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842FFE9D273EA35B0090DDF3 /* SetupExpensesAssembly.swift */; };
+		847747F027510E2500734AB5 /* AddExpenseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847747EF27510E2500734AB5 /* AddExpenseVC.swift */; };
+		847747F327510E3900734AB5 /* AddExpenseScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847747F227510E3900734AB5 /* AddExpenseScreen.storyboard */; };
+		847747F527510E5E00734AB5 /* AddExpenseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847747F427510E5E00734AB5 /* AddExpenseAssembly.swift */; };
+		847747F72751141500734AB5 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847747F62751141400734AB5 /* Colors.xcassets */; };
 		847B627E273AA3F1005AE905 /* ExpensesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B627D273AA3F1005AE905 /* ExpensesManager.swift */; };
 		848C186927395112005B114D /* MyExpensesNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C186827395112005B114D /* MyExpensesNC.swift */; };
 		849F0DAB27384DC100F2AC60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849F0DAA27384DC100F2AC60 /* AppDelegate.swift */; };
@@ -43,6 +47,10 @@
 /* Begin PBXFileReference section */
 		84209BDD2747DBA700A92320 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		842FFE9D273EA35B0090DDF3 /* SetupExpensesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupExpensesAssembly.swift; sourceTree = "<group>"; };
+		847747EF27510E2500734AB5 /* AddExpenseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseVC.swift; sourceTree = "<group>"; };
+		847747F227510E3900734AB5 /* AddExpenseScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddExpenseScreen.storyboard; sourceTree = "<group>"; };
+		847747F427510E5E00734AB5 /* AddExpenseAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseAssembly.swift; sourceTree = "<group>"; };
+		847747F62751141400734AB5 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		847B627D273AA3F1005AE905 /* ExpensesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesManager.swift; sourceTree = "<group>"; };
 		848C186827395112005B114D /* MyExpensesNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExpensesNC.swift; sourceTree = "<group>"; };
 		849F0DA727384DC100F2AC60 /* MyFinanse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFinanse.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +103,16 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		847747F127510E2800734AB5 /* AddExpense */ = {
+			isa = PBXGroup;
+			children = (
+				847747F427510E5E00734AB5 /* AddExpenseAssembly.swift */,
+				847747EF27510E2500734AB5 /* AddExpenseVC.swift */,
+				847747F227510E3900734AB5 /* AddExpenseScreen.storyboard */,
+			);
+			path = AddExpense;
+			sourceTree = "<group>";
+		};
 		847B627F273AA3F6005AE905 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +150,7 @@
 				84209BDF2747DBD500A92320 /* Helpers */,
 				847B627F273AA3F6005AE905 /* Services */,
 				849F0DB327384DC100F2AC60 /* Assets.xcassets */,
+				847747F62751141400734AB5 /* Colors.xcassets */,
 				849F0DB527384DC100F2AC60 /* LaunchScreen.storyboard */,
 				849F0DB827384DC100F2AC60 /* Info.plist */,
 			);
@@ -142,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				849F0DC12738510100F2AC60 /* MyExpenses */,
+				847747F127510E2800734AB5 /* AddExpense */,
 				84C1325F273E793C00039399 /* SetupExpenses */,
 				84C13258273E747D00039399 /* ExpensesDate */,
 			);
@@ -306,8 +326,10 @@
 			files = (
 				849F0DB727384DC100F2AC60 /* LaunchScreen.storyboard in Resources */,
 				849F0DB427384DC100F2AC60 /* Assets.xcassets in Resources */,
+				847747F327510E3900734AB5 /* AddExpenseScreen.storyboard in Resources */,
 				849F0DB227384DC100F2AC60 /* Main.storyboard in Resources */,
 				849F0DCA273851D600F2AC60 /* MyExpensesScreen.storyboard in Resources */,
+				847747F72751141500734AB5 /* Colors.xcassets in Resources */,
 				84C1325C273E74ED00039399 /* ExpensesDateScreen.storyboard in Resources */,
 				84C13261273E795B00039399 /* SetupExpensesScreen.storyboard in Resources */,
 			);
@@ -342,7 +364,9 @@
 				849F0DC8273851CD00F2AC60 /* MyExpensesPresenter.swift in Sources */,
 				849F0DAD27384DC100F2AC60 /* SceneDelegate.swift in Sources */,
 				842FFE9E273EA35B0090DDF3 /* SetupExpensesAssembly.swift in Sources */,
+				847747F527510E5E00734AB5 /* AddExpenseAssembly.swift in Sources */,
 				84B0760127394A2100F7633A /* ExpenseCell.swift in Sources */,
+				847747F027510E2500734AB5 /* AddExpenseVC.swift in Sources */,
 				84F94DA6273D48F600312426 /* TableCellConfigurator.swift in Sources */,
 				849F0DC6273851C500F2AC60 /* MyExpensesRouter.swift in Sources */,
 			);
