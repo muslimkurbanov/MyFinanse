@@ -78,45 +78,54 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JH5-Bo-8hV">
-                                <rect key="frame" x="156" y="382" width="102" height="39"/>
+                                <rect key="frame" x="156" y="392" width="102" height="39"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <color key="tintColor" name="mainAppColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Добавить"/>
+                                <connections>
+                                    <action selector="addExpenseAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mHI-jR-kyb"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="sUN-oY-015">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FK2-Sr-wR6">
                                 <rect key="frame" x="232" y="159.5" width="30" height="29"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" systemColor="systemGrayColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="APM-pk-Qan"/>
-                                    <constraint firstAttribute="height" constant="30" id="qYu-cF-LnE"/>
+                                    <constraint firstAttribute="height" constant="30" id="bpS-hd-fys"/>
+                                    <constraint firstAttribute="width" constant="30" id="dbh-g0-vUP"/>
                                 </constraints>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" backgroundImage="pencil.circle" catalog="system"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </imageView>
+                                <connections>
+                                    <action selector="editExpenseImageAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="O39-Dn-Cee"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ThG-J1-h76" secondAttribute="trailing" constant="46" id="5RX-dR-H29"/>
-                            <constraint firstItem="sUN-oY-015" firstAttribute="trailing" secondItem="CCR-Lw-W5X" secondAttribute="trailing" constant="-5" id="6LW-cY-7ZT"/>
+                            <constraint firstItem="FK2-Sr-wR6" firstAttribute="trailing" secondItem="CCR-Lw-W5X" secondAttribute="trailing" constant="-5" id="5eQ-zu-cHP"/>
                             <constraint firstItem="CCR-Lw-W5X" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="8M6-QY-H5V"/>
                             <constraint firstItem="CCR-Lw-W5X" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="FMn-f9-8gf"/>
                             <constraint firstItem="UMF-Ck-qYU" firstAttribute="top" secondItem="ThG-J1-h76" secondAttribute="bottom" constant="30" id="HEB-aH-qgw"/>
                             <constraint firstItem="ThG-J1-h76" firstAttribute="top" secondItem="CCR-Lw-W5X" secondAttribute="bottom" constant="30" id="Mfj-3J-Wzo"/>
+                            <constraint firstItem="FK2-Sr-wR6" firstAttribute="bottom" secondItem="CCR-Lw-W5X" secondAttribute="bottom" constant="-5" id="Xqa-4N-guc"/>
                             <constraint firstItem="UMF-Ck-qYU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="46" id="dXf-mY-BlI"/>
-                            <constraint firstItem="sUN-oY-015" firstAttribute="bottom" secondItem="CCR-Lw-W5X" secondAttribute="bottom" constant="-5" id="gfn-d7-1qO"/>
-                            <constraint firstItem="JH5-Bo-8hV" firstAttribute="top" secondItem="UMF-Ck-qYU" secondAttribute="bottom" constant="20" id="oEH-6E-jxM"/>
+                            <constraint firstItem="JH5-Bo-8hV" firstAttribute="top" secondItem="UMF-Ck-qYU" secondAttribute="bottom" constant="30" id="oEH-6E-jxM"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UMF-Ck-qYU" secondAttribute="trailing" constant="46" id="taJ-T0-zqI"/>
                             <constraint firstItem="JH5-Bo-8hV" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="xPH-WZ-TWw"/>
                             <constraint firstItem="ThG-J1-h76" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="46" id="xnu-0i-1ii"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="expenseImageView" destination="CCR-Lw-W5X" id="dX1-34-hv8"/>
                         <outlet property="expenseNameTextField" destination="Iue-zb-Jko" id="Ho5-bI-EdD"/>
                         <outlet property="expenseSumTextField" destination="FFA-2H-8JJ" id="03B-Y9-HDh"/>
                     </connections>
@@ -129,7 +138,7 @@
     <resources>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <namedColor name="mainAppColor">
-            <color red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.47699999809265137" green="0.50499999523162842" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

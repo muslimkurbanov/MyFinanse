@@ -53,40 +53,6 @@ final class MyExpensesVC: UIViewController {
     @objc private func addExpenseDidTap() {
         
         presenter?.addExpenseDidTap()
-        
-//        let alertController = UIAlertController(title: "Добавть расход",
-//                                                message: nil,
-//                                                preferredStyle: .alert)
-//
-//        alertController.addTextField { textField in
-//
-//            textField.placeholder = "Название расхода"
-//            textField.autocapitalizationType = .words
-//        }
-//
-//        alertController.addTextField { textField in
-//
-//            textField.keyboardType = .numberPad
-//
-//            //TODO: - В настройках добавить курс
-//            textField.placeholder = "Сумма (₽)"
-//        }
-//
-//        let doneAction = UIAlertAction(title: "Готово", style: .default) { [weak self] _ in
-//
-//            guard let textFields = alertController.textFields else { return }
-//
-//            guard let expenseName = textFields[0].text,
-//                  let expenseSum = textFields[1].text,
-//                  expenseName != "",
-//                  expenseSum != "" else { return }
-//
-//            self?.presenter?.addExpense(name: expenseName, sum: Int(expenseSum) ?? 0)
-//        }
-//
-//        alertController.addAction(doneAction)
-//
-//        present(alertController, animated: true, completion: nil)
     }
     
     @objc private func setupExpensesDidTap() {

@@ -40,6 +40,7 @@ extension ExpenseCell: Configurable {
         if model.expense.expenseSum < 0 {
             
             expenseCheckLabel.textColor = .red
+            
         } else {
             
             expenseCheckLabel.textColor = .systemGreen

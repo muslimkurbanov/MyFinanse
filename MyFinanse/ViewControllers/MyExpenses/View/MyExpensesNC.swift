@@ -11,8 +11,6 @@ final class MyExpensesNC: UINavigationController {
     
     override func viewDidLoad() {
         
-        let myExpensesScreen = MyExpensesAssembly.assembleModule()
-        
         if #available(iOS 15.0, *) {
             
             navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -29,6 +27,7 @@ final class MyExpensesNC: UINavigationController {
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationBar.titleTextAttributes = textAttributes
         
+        let myExpensesScreen = MyExpensesAssembly.assembleModule()
         viewControllers = [myExpensesScreen]
     }
 }

@@ -14,6 +14,9 @@ final class AddExpenseAssembly {
         
         guard let view = UIStoryboard(name: "AddExpenseScreen", bundle: nil).instantiateViewController(withIdentifier: "AddExpenseVC") as? AddExpenseVC else { return UIViewController() }
         
+        let presenter = AddExpensePresenter(view: view)
+        view.presenter = presenter
+        
         return view
     }
 }

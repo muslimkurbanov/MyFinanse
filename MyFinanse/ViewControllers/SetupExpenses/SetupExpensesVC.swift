@@ -41,22 +41,34 @@ final class SetupExpensesVC: UITableViewController {
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         
+        let cancelItem = UIBarButtonItem(title: "Отменить", style: .plain, target: self, action: #selector(cancelItemDidTap))
+
+        navigationItem.leftBarButtonItem = cancelItem
+        
         //tableView
         clearsSelectionOnViewWillAppear = true
     }
     
-    //MARK: - TableViewDelegate
+    @objc private func cancelItemDidTap() {
+        
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+//MARK: - TableViewDelegate
+
+extension SetupExpensesVC {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
         switch indexPath.row {
-//            case 0:
+            //case 0:
             
-//            self.navigationController?.show(SetupExpensesAssembly.assembleModule(), sender: nil)
+            //self.navigationController?.show(SetupExpensesAssembly.assembleModule(), sender: nil)
             
-            default: break
+        default: break
         }
     }
     

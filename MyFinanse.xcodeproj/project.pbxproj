@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		84209BDE2747DBA700A92320 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84209BDD2747DBA700A92320 /* UIView + Extension.swift */; };
+		842347E32752730C00A528DE /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 842347E22752730C00A528DE /* IQKeyboardManagerSwift */; };
 		842FFE9E273EA35B0090DDF3 /* SetupExpensesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842FFE9D273EA35B0090DDF3 /* SetupExpensesAssembly.swift */; };
 		847747F027510E2500734AB5 /* AddExpenseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847747EF27510E2500734AB5 /* AddExpenseVC.swift */; };
 		847747F327510E3900734AB5 /* AddExpenseScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847747F227510E3900734AB5 /* AddExpenseScreen.storyboard */; };
@@ -36,6 +37,7 @@
 		84C1325E273E793900039399 /* SetupExpensesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1325D273E793900039399 /* SetupExpensesVC.swift */; };
 		84C13261273E795B00039399 /* SetupExpensesScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C13260273E795B00039399 /* SetupExpensesScreen.storyboard */; };
 		84C70232273D58D4007DFDF1 /* MyExpensesDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C70231273D58D4007DFDF1 /* MyExpensesDataConverter.swift */; };
+		84E115A8275124AA008F9C14 /* AddExpensePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E115A7275124AA008F9C14 /* AddExpensePresenter.swift */; };
 		84F94DA0273D484100312426 /* MyExpensesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F94D9F273D484100312426 /* MyExpensesViewModel.swift */; };
 		84F94DA6273D48F600312426 /* TableCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F94DA2273D48F600312426 /* TableCellConfigurator.swift */; };
 		84F94DA7273D48F600312426 /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F94DA3273D48F600312426 /* CellConfigurator.swift */; };
@@ -76,6 +78,7 @@
 		84C1325D273E793900039399 /* SetupExpensesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupExpensesVC.swift; sourceTree = "<group>"; };
 		84C13260273E795B00039399 /* SetupExpensesScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetupExpensesScreen.storyboard; sourceTree = "<group>"; };
 		84C70231273D58D4007DFDF1 /* MyExpensesDataConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExpensesDataConverter.swift; sourceTree = "<group>"; };
+		84E115A7275124AA008F9C14 /* AddExpensePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpensePresenter.swift; sourceTree = "<group>"; };
 		84F94D9F273D484100312426 /* MyExpensesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExpensesViewModel.swift; sourceTree = "<group>"; };
 		84F94DA2273D48F600312426 /* TableCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellConfigurator.swift; sourceTree = "<group>"; };
 		84F94DA3273D48F600312426 /* CellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
@@ -89,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842347E32752730C00A528DE /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				847747F427510E5E00734AB5 /* AddExpenseAssembly.swift */,
+				84E115A7275124AA008F9C14 /* AddExpensePresenter.swift */,
 				847747EF27510E2500734AB5 /* AddExpenseVC.swift */,
 				847747F227510E3900734AB5 /* AddExpenseScreen.storyboard */,
 			);
@@ -282,6 +287,9 @@
 			dependencies = (
 			);
 			name = MyFinanse;
+			packageProductDependencies = (
+				842347E22752730C00A528DE /* IQKeyboardManagerSwift */,
+			);
 			productName = MyFinanse;
 			productReference = 849F0DA727384DC100F2AC60 /* MyFinanse.app */;
 			productType = "com.apple.product-type.application";
@@ -310,6 +318,9 @@
 				Base,
 			);
 			mainGroup = 849F0D9E27384DC100F2AC60;
+			packageReferences = (
+				842347E12752730C00A528DE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 849F0DA827384DC100F2AC60 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -367,6 +378,7 @@
 				847747F527510E5E00734AB5 /* AddExpenseAssembly.swift in Sources */,
 				84B0760127394A2100F7633A /* ExpenseCell.swift in Sources */,
 				847747F027510E2500734AB5 /* AddExpenseVC.swift in Sources */,
+				84E115A8275124AA008F9C14 /* AddExpensePresenter.swift in Sources */,
 				84F94DA6273D48F600312426 /* TableCellConfigurator.swift in Sources */,
 				849F0DC6273851C500F2AC60 /* MyExpensesRouter.swift in Sources */,
 			);
@@ -590,6 +602,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		842347E12752730C00A528DE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		842347E22752730C00A528DE /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 842347E12752730C00A528DE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 849F0D9F27384DC100F2AC60 /* Project object */;
 }
