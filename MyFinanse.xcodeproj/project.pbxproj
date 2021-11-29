@@ -44,6 +44,10 @@
 		84F94DA8273D48F600312426 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F94DA4273D48F600312426 /* Configurable.swift */; };
 		84F94DA9273D48F600312426 /* CollectionCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F94DA5273D48F600312426 /* CollectionCellConfigurator.swift */; };
 		84F94DAC273D4B6B00312426 /* MyExpensesTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F94DAB273D4B6B00312426 /* MyExpensesTableViewManager.swift */; };
+		E338FFCF27550A100078B7E1 /* ExpenseImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E338FFCE27550A100078B7E1 /* ExpenseImageCell.swift */; };
+		E338FFD227550CAC0078B7E1 /* AddExpenseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E338FFD127550CAC0078B7E1 /* AddExpenseRouter.swift */; };
+		E338FFD627550F960078B7E1 /* PresentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E338FFD527550F960078B7E1 /* PresentNavigationController.swift */; };
+		E3594352275507F100044421 /* AddExpenseImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3594351275507F100044421 /* AddExpenseImageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +89,10 @@
 		84F94DA4273D48F600312426 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		84F94DA5273D48F600312426 /* CollectionCellConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCellConfigurator.swift; sourceTree = "<group>"; };
 		84F94DAB273D4B6B00312426 /* MyExpensesTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExpensesTableViewManager.swift; sourceTree = "<group>"; };
+		E338FFCE27550A100078B7E1 /* ExpenseImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseImageCell.swift; sourceTree = "<group>"; };
+		E338FFD127550CAC0078B7E1 /* AddExpenseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseRouter.swift; sourceTree = "<group>"; };
+		E338FFD527550F960078B7E1 /* PresentNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentNavigationController.swift; sourceTree = "<group>"; };
+		E3594351275507F100044421 /* AddExpenseImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseImageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				84209BDD2747DBA700A92320 /* UIView + Extension.swift */,
+				E338FFD527550F960078B7E1 /* PresentNavigationController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -110,9 +119,9 @@
 		847747F127510E2800734AB5 /* AddExpense */ = {
 			isa = PBXGroup;
 			children = (
-				847747F427510E5E00734AB5 /* AddExpenseAssembly.swift */,
-				84E115A7275124AA008F9C14 /* AddExpensePresenter.swift */,
-				847747EF27510E2500734AB5 /* AddExpenseVC.swift */,
+				E338FFD327550D350078B7E1 /* Wireframe */,
+				E338FFD427550D3C0078B7E1 /* Presenter */,
+				E3594350275507DD00044421 /* View */,
 				847747F227510E3900734AB5 /* AddExpenseScreen.storyboard */,
 			);
 			path = AddExpense;
@@ -271,6 +280,41 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		E338FFD027550A260078B7E1 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				E338FFCE27550A100078B7E1 /* ExpenseImageCell.swift */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		E338FFD327550D350078B7E1 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				847747F427510E5E00734AB5 /* AddExpenseAssembly.swift */,
+				E338FFD127550CAC0078B7E1 /* AddExpenseRouter.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		E338FFD427550D3C0078B7E1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				84E115A7275124AA008F9C14 /* AddExpensePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E3594350275507DD00044421 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E338FFD027550A260078B7E1 /* CollectionViewCells */,
+				E3594351275507F100044421 /* AddExpenseImageVC.swift */,
+				847747EF27510E2500734AB5 /* AddExpenseVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,11 +406,15 @@
 				849F0DD22738570100F2AC60 /* ExpensesModel.swift in Sources */,
 				84F94DA7273D48F600312426 /* CellConfigurator.swift in Sources */,
 				848C186927395112005B114D /* MyExpensesNC.swift in Sources */,
+				E338FFCF27550A100078B7E1 /* ExpenseImageCell.swift in Sources */,
 				849F0DAB27384DC100F2AC60 /* AppDelegate.swift in Sources */,
 				849F0DBF27384FA800F2AC60 /* MainTabBarController.swift in Sources */,
 				847B627E273AA3F1005AE905 /* ExpensesManager.swift in Sources */,
+				E338FFD627550F960078B7E1 /* PresentNavigationController.swift in Sources */,
+				E3594352275507F100044421 /* AddExpenseImageVC.swift in Sources */,
 				84C1325A273E74DE00039399 /* ExpensesDatePresenter.swift in Sources */,
 				84C1325E273E793900039399 /* SetupExpensesVC.swift in Sources */,
+				E338FFD227550CAC0078B7E1 /* AddExpenseRouter.swift in Sources */,
 				84C70232273D58D4007DFDF1 /* MyExpensesDataConverter.swift in Sources */,
 				849F0DCE2738524D00F2AC60 /* BaseRouterInput.swift in Sources */,
 				849F0DCF2738524D00F2AC60 /* BaseViewOutput.swift in Sources */,

@@ -10,6 +10,7 @@ import Foundation
 protocol AddExpenseViewOutput: BaseViewOutput {
     
     func addExpense(name: String, sum: Int)
+    func expenseImageViewDidTap(delegate: AddExpenseVC)
 }
 
 final class AddExpensePresenter {
@@ -17,15 +18,17 @@ final class AddExpensePresenter {
     //MARK: - Properties
     
     private unowned let view: AddExpenseViewInput
-    
+    private let router: AddExpenseRouterInput
     private let expenseManager: ExpensesManager = ExpensesManagerImp()
     
     //MARK: - Init
     
     init(
-        view: AddExpenseViewInput
+        view: AddExpenseViewInput,
+        router: AddExpenseRouterInput
     ) {
         self.view = view
+        self.router = router
     }
 }
 
@@ -42,5 +45,10 @@ extension AddExpensePresenter: AddExpenseViewOutput {
             
             self?.view.dismissView()
         }
+    }
+    
+    func expenseImageViewDidTap(delegate: AddExpenseVC) {
+        
+        router.showExpenseImageScreen(delegate: delegate)
     }
 }

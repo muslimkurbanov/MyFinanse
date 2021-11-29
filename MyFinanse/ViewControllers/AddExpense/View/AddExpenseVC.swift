@@ -9,6 +9,7 @@ import UIKit
 
 protocol AddExpenseViewInput: AnyObject {
     
+    func setImage(image: UIImage)
     func dismissView()
 }
 
@@ -23,6 +24,7 @@ final class AddExpenseVC: UIViewController {
     //MARK: - Properties
     
     var presenter: AddExpensePresenter?
+    var delegate: MyExpensesViewOutput?
     
     //MARK: - Lifecycle
     
@@ -46,7 +48,10 @@ final class AddExpenseVC: UIViewController {
               expenseName != "",
               expenseSum != "" else { return }
         
-        presenter?.addExpense(name: expenseName, sum: Int(expenseSum) ?? 0)
+        dismiss(animated: true) {
+            
+            self.delegate?.addExpense(name: expenseName, sum: Int(expenseSum) ?? 0)
+        }
     }
     
     @IBAction private func editExpenseImageAction(_ sender: UIButton) {
@@ -96,7 +101,7 @@ final class AddExpenseVC: UIViewController {
     
     @objc private func expenseImageViewDidTap() {
         
-        
+        presenter?.expenseImageViewDidTap(delegate: self)
     }
     
     @objc private func cancelItemDidTap() {
@@ -124,6 +129,17 @@ extension AddExpenseVC: UITextFieldDelegate {
 //MARK: - ViewInput
 
 extension AddExpenseVC: AddExpenseViewInput {
+    
+    func setImage(image: UIImage) {
+        
+        expenseImageView.alpha = 0
+        
+        UIView.animate(withDuration: 0.5) {
+            
+            self.expenseImageView.image = image
+            self.expenseImageView.alpha = 1
+        }
+    }
     
     func dismissView() {
         

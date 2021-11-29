@@ -78,7 +78,7 @@ extension MyExpensesPresenter: MyExpensesViewOutput {
     
     func addExpenseDidTap() {
         
-        router.showAddExpenseScreen()
+        router.showAddExpenseScreen(delegate: self)
     }
     
     func setupExpensesDidTap() {

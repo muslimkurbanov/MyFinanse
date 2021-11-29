@@ -10,12 +10,15 @@ import UIKit
 
 final class AddExpenseAssembly {
     
-    static func assembleModule() -> UIViewController {
+    static func assembleModule(delegate: MyExpensesPresenter) -> UIViewController {
         
         guard let view = UIStoryboard(name: "AddExpenseScreen", bundle: nil).instantiateViewController(withIdentifier: "AddExpenseVC") as? AddExpenseVC else { return UIViewController() }
         
-        let presenter = AddExpensePresenter(view: view)
+        let router = AddExpenseRouter(controller: view)
+        let presenter = AddExpensePresenter(view: view, router: router)
+        
         view.presenter = presenter
+        view.delegate = delegate
         
         return view
     }
